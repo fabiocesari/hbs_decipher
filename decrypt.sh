@@ -6,7 +6,7 @@
 
 set -e
 
-FULLPATH=$(greadlink -f $0)
+FULLPATH=$(readlink -f $0)
 CMD=$(basename $FULLPATH)
 DIR=$(dirname $FULLPATH)
 
