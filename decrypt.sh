@@ -6,7 +6,10 @@
 
 set -e
 
-FULLPATH=$(readlink -f $0)
+READLINK=readlink
+[ $(uname) = Darwin ] && READLINK=greadlink 
+FULLPATH=$($READLINK -f $0)
+
 CMD=$(basename $FULLPATH)
 DIR=$(dirname $FULLPATH)
 
